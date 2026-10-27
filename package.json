@@ -1,19 +1,25 @@
 {
-  "name": "leavemangamentsystem",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "body-parse": "^0.1.0",
-    "express": "^5.3.0",
-    "mongoose": "^9.11.4"
-  }
+   "homepage": "https://github.com/kowsalya280506/leavemanagement.git",
+   "name": "leavemangamentsystem",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start": "node app.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "deploy": "gh-pages -d public"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "type": "commonjs",
+   "dependencies": {
+      "bcryptjs": "^3.0.3",
+      "body-parse": "^0.1.0",
+      "express": "^5.3.0",
+      "mongoose": "^9.11.4"
+   },
+   "devDependencies": {
+      "gh-pages": "^6.3.0"
+   }
 }
