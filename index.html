@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leave Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Leave Management System</h1>
+        <p id="message"></p>
+
+        <!-- Login -->
+        <section id="loginSection" class="panel">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label>Email</label>
+                <input type="email" id="loginEmail" required>
+
+                <label>Password</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account?
+                <a href="#" id="showRegister">Create User</a>
+            </p>
+        </section>
+
+        <!-- Registration -->
+        <section id="registerSection" class="panel hidden">
+            <h2>Create Student Account</h2>
+            <form id="registerForm">
+                <label>Student Name</label>
+                <input id="username" required>
+
+                <label>Email</label>
+                <input type="email" id="email" required>
+
+                <label>Password</label>
+                <input type="password" id="password" required minlength="4">
+
+                <label>Roll Number</label>
+                <input id="rollNumber" required>
+
+                <button type="submit">Register</button>
+            </form>
+            <p><a href="#" id="showLogin">Back to Login</a></p>
+        </section>
+
+        <!-- Student Dashboard -->
+        <section id="studentDashboard" class="hidden">
+            <div class="heading">
+                <h2>Student Dashboard</h2>
+                <button class="danger" onclick="logout()">Logout</button>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Casual Leave Balance</h3>
+                    <p id="casualBalance">10</p>
+                </div>
+                <div class="card">
+                    <h3>Medical Leave Balance</h3>
+                    <p id="medicalBalance">10</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Apply for Leave</h2>
+                <form id="leaveForm">
+                    <label>Leave Type</label>
+                    <select id="leaveType" required>
+                        <option value="casual">Casual Leave</option>
+                        <option value="medical">Medical Leave</option>
+                    </select>
+
+                    <label>Start Date</label>
+                    <input type="date" id="startDate" required>
+
+                    <label>End Date</label>
+                    <input type="date" id="endDate" required>
+
+                    <label>Reason</label>
+                    <textarea id="reason" required></textarea>
+
+                    <button type="submit">Apply Leave</button>
+                </form>
+            </div>
+
+            <div class="panel">
+                <h2>My Leave History</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Start</th>
+                                <th>End</th>
+                                <th>Days</th>
+                                <th>Reason</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaveHistory"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Staff/Admin Dashboard -->
+        <section id="adminDashboard" class="hidden">
+            <div class="heading">
+                <h2>Staff / Admin Dashboard</h2>
+                <button class="danger" onclick="logout()">Logout</button>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Leaves</h3>
+                    <p id="pendingLeaves">0</p>
+                </div>
+                <div class="card">
+                    <h3>Approved Leaves</h3>
+                    <p id="approvedLeaves">0</p>
+                </div>
+                <div class="card">
+                    <h3>Rejected Leaves</h3>
+                    <p id="rejectedLeaves">0</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Student List</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Roll Number</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentList"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Leave Requests</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Type</th>
+                                <th>Dates</th>
+                                <th>Days</th>
+                                <th>Reason</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminLeaveList"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
