@@ -40,7 +40,6 @@ async function request(url, options = {}) {
 
     return data;
 }
-
 function makeCell(row, value) {
     const cell = document.createElement("td");
     cell.textContent = value ?? "";
