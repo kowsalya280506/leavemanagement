@@ -9,8 +9,7 @@ const adminRoutes = require("./routes/adminRoutes");
 const staffRoutes = require("./routes/staffRoutes");
 
 const app = express();
-const PORT = 5050;
-
+const PORT = process.env.PORT || 5050;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -37,7 +36,7 @@ async function startServer() {
     try {
         await connectDB();
 
-        app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
             console.log("Server running on port " + PORT);
             console.log("MongoDB Connected Successfully");
             console.log("Student API: /api");
