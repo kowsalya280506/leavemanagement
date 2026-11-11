@@ -20,8 +20,11 @@ function message(text) {
     $("message").textContent = text;
 }
 
+
 async function request(url, options = {}) {
-    const response = await fetch(url, {
+    const API_URL = "https://leavemanagement-tllw.onrender.com";
+
+    const response = await fetch(`${API_URL}${url}`, {
         ...options,
         headers: {
             "Content-Type": "application/json",
@@ -37,7 +40,6 @@ async function request(url, options = {}) {
 
     return data;
 }
-
 function makeCell(row, value) {
     const cell = document.createElement("td");
     cell.textContent = value ?? "";
