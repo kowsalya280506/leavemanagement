@@ -1,4 +1,4 @@
-
+const cors = require("cors");
 const express = require("express");
 const path = require("path");
 
@@ -9,6 +9,9 @@ const adminRoutes = require("./routes/adminRoutes");
 const staffRoutes = require("./routes/staffRoutes");
 
 const app = express();
+app.use(cors({
+    origin: "https://kowsalya280506.github.io"
+}));
 const PORT = process.env.PORT || 5050;
 // Middleware
 app.use(express.json());
